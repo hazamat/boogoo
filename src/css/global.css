@@ -1,0 +1,34 @@
+html{
+ margin:0;
+ padding:0;
+}
+body{
+ overflow-x:hidden;
+ overflow-y:hidden;
+ margin:0;
+}
+header{
+ position:fixed;
+ top:0;
+ width:100vw;
+ height:7vh;
+ margin:0;
+}
+footer{
+ position:fixed;
+ top:93vh;
+ width:100vw;
+ height:7vh;
+ margin:0;
+}
+.screen{
+ padding-top:7vh;
+ padding-bottom:7vh;
+ width:100vw;
+ height:86vh;
+}
+.row{
+ display:flex;
+ -webkit-flex-direction:row;
+ flex-direction:row;
+}

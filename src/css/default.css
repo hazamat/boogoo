@@ -1,0 +1,27 @@
+.switchBody{
+ width:3vw;
+ height:6vh;
+ background-color:gray;
+ border:2% solid gray;
+ border-radius:5rem;
+}
+.switchOn{
+ margin-left:50%;
+}
+.switchOff{
+}
+.switchSelector{
+ width:50%;
+ height:100%;
+ background-color:black;
+ bottom:5%;
+ border:2% solid black;
+ border-radius:5rem;
+}
+.button{
+ border:0.5 solid gray;
+ border-radius:1rem;
+ background-color:gray;
+ display:inline-block;
+ padding:1rem;
+}
