@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
  <script>
-  let BASE_URL=document.baseURI;
+  let BASE_URI=document.baseURI;
   {const sParam="url"
   let sPageURL = window.location.href;
   if(sPageURL.indexOf(sParam) > -1){
@@ -30,6 +30,7 @@
    }
   }
   {
+   console.log(getFileAsElement);
    getFileAsElement("css/global.css", 'style', "head").catch(err =>{
     console.log("ERR");
    });
