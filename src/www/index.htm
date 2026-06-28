@@ -13,9 +13,23 @@
    base.target="_blank";
    document.head.appendChild(base);
   }}
+  function getFileAsElement(file, type, loc){
+   fetch(file, document.baseURI).toString();
+   const res = await fetch(url);
+   const data = await res.text();
+   if(type == 'style'){
+    const style=document.createElement(type);
+    style.textContent=data;
+    document.head.appendChild(style);
+   }else {
+
+   }
+  }
+  {
+   getFileAsElement("../css/global.css", 'style', "head");
+   getFileAsElement("../css/default.css", 'style', "head");
+  }
  </script>
- <link href="../css/global.css"rel="stylesheet"/>
- <link href="../css/default.css"rel="stylesheet"/>
  <title>Boogoo</title>
 </head>
 <body>
