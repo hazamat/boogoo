@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+ <script>
+  {const sParam="url"
+  if(window.location.href.indexOf(sParam) > -1){
+   let sPageURL = sPageURL.substring(sPageURL.indexOf(sParam)+sParam.length+1);
+   if(sPageURL.indexOf('&') > -1){
+    sPageURL = sPageURL.slice(0, sPageURL.indexOf('&'));
+   }
+   var base = document.createElement('base');
+   base.href = sPageURL;
+   base.target="_blank";
+   document.head.appendChild(base);
+  }}
+ </script>
+ <link href="../css/global.css"rel="stylesheet"/>
+ <link href="../css/default.css"rel="stylesheet"/>
+ <title>Boogoo</title>
+</head>
+<body>
+<script src="../js/game.js"defer="true"blocking="render"></script>
+<header>
+ <p>Head</p>
+</header>
+<div id="newGame"class="screen">
+ <h1>Boogoo</h1>
+  <div class="row">
+   <div>DARK MODE:</div>
+   <div class="switchBody"onclick="toggleDarkMode()"tabindex=0>
+    <div class="switchSelector switchOn"></div>
+   </div>
+  </div>
+ <div onclick="goTo('gameReturn')"class="button">Down</div>
+</div>
+<div id="gameReturn"class="screen">
+ <p>VERY RANDOM TEXT</p>
+ <div onclick="goTo('newGame')"class="button">Up</div>
+</div>
+<footer>
+ <p>Boogoo</p>
+</footer>
+</body>
+</html>
