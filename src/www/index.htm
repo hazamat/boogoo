@@ -15,31 +15,27 @@
   }}
   async function getFileAsElement(file, type, loc){
    const res = await fetch(file);
-   console.log(res);
    const data = await res.text();
-   console.log(data);
    if(type == 'style'){
     const style=document.createElement(type);
     style.textContent=data;
-    document.head.appendChild(style);
+    document[loc].appendChild(style);
    }else {
-
+    const script=document.createElement(type);
+    script.text=data;
+    document[loc].appendChild(script);
    }
   }
   {
    console.log(getFileAsElement);
-   getFileAsElement("css/global.css", 'style', "head").catch(err =>{
-    console.log("ERR");
-   });
-   getFileAsElement("css/default.css", 'style', "head").catch(err =>{
-    console.log("ERR");
-   });
+   getFileAsElement("../css/global.css", 'style', 'head');
+   getFileAsElement("../css/default.css", 'style', 'head');
+   getFileAsElement("../js/game.js", 'script', 'body');
   }
  </script>
  <title>Boogoo</title>
 </head>
 <body>
-<script src="../js/game.js"defer="true"blocking="render"></script>
 <header>
  <p>Head</p>
 </header>
