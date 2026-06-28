@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
  <script>
+  let BASE_URL=document.baseURI;
   {const sParam="url"
   let sPageURL = window.location.href;
   if(sPageURL.indexOf(sParam) > -1){
@@ -12,11 +13,14 @@
    base.href = sPageURL;
    base.target="_blank";
    document.head.appendChild(base);
+   BASE_URL=base;
   }}
   async function getFileAsElement(file, type, loc){
-   console.log(document.baseURI);
-   const res = await fetch(document.baseURI+file);
+   console.log(BASE_URI+file);
+   const res = await fetch(BASE_URI+file);
+   console.log(res);
    const data = await res.text();
+   console.log(data);
    if(type == 'style'){
     const style=document.createElement(type);
     style.textContent=data;
