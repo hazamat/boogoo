@@ -15,7 +15,7 @@
   }}
   async function getFileAsElement(file, type, loc){
    console.log(document.baseURI);
-   fetch(file, document.baseURI).toString();
+   fetch(file).toString();
    const res = await fetch(url);
    const data = await res.text();
    if(type == 'style'){
