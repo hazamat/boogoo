@@ -27,8 +27,12 @@
    }
   }
   {
-   getFileAsElement("../css/global.css", 'style', "head");
-   getFileAsElement("../css/default.css", 'style', "head");
+   getFileAsElement("../css/global.css", 'style', "head").catch(err =>{
+    console.log("ERR");
+   });
+   getFileAsElement("../css/default.css", 'style', "head").catch(err =>{
+    console.log("ERR");
+   });
   }
  </script>
  <title>Boogoo</title>
