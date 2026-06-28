@@ -14,23 +14,40 @@
    document.head.appendChild(base);
   }}
   async function getFileAsElement(file, type, loc){
-   const res = await fetch(file);
-   const data = await res.text();
-   if(type == 'style'){
-    const style=document.createElement(type);
-    style.textContent=data;
-    document[loc].appendChild(style);
-   }else {
-    const script=document.createElement(type);
-    script.text=data;
-    document[loc].appendChild(script);
+   try{
+    const res = await fetch(file);
+    const data = await res.text();
+    if(type == 'style'){
+     const style=document.createElement(type);
+     style.textContent=data;
+     document[loc].appendChild(style);
+    }else {
+     const script=document.createElement(type);
+     script.text=data;
+     document[loc].appendChild(script);
+    }
+   }catch(e){
+    try{
+     if(type == 'style'){
+      const style=document.createElement('link');
+      style.rel="stylesheet";
+      style.href=file;
+      document[loc].appendChild(style);
+     }else{
+      const script=document.createElement(type);
+      script.setAttribute('src', file);
+      document[loc].appendChild(script);
+     }
+    }catch(err){
+     console.error(e);
+     console.error(err);
+    }
    }
   }
   {
-   console.log(getFileAsElement);
    getFileAsElement("../css/global.css", 'style', 'head');
    getFileAsElement("../css/default.css", 'style', 'head');
-   getFileAsElement("../js/game.js", 'script', 'body');
+   getFileAsElement("../js/game.js", 'script', 'head');
   }
  </script>
  <title>Boogoo</title>
