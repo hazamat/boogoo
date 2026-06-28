@@ -4,7 +4,7 @@
   {const sParam="url"
   let sPageURL = window.location.href;
   if(sPageURL.indexOf(sParam) > -1){
-   let sPageURL = sPageURL.substring(sPageURL.indexOf(sParam)+sParam.length+1);
+   sPageURL = sPageURL.substring(sPageURL.indexOf(sParam)+sParam.length+1);
    if(sPageURL.indexOf('&') > -1){
     sPageURL = sPageURL.slice(0, sPageURL.indexOf('&'));
    }
