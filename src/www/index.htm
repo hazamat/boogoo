@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+ <meta name="viewport"content="width=device-width,initial-scale=1.0"/>
  <script>
   {const sParam="url"
   let sPageURL = window.location.href;
@@ -57,14 +58,17 @@
  <p>Head</p>
 </header>
 <div id="newGame"class="screen">
- <h1>Boogoo</h1>
-  <div class="row">
+ <h1 class="title">Boogoo</h1>
+  <div class="rowCentered">
    <div>DARK MODE:</div>
    <div class="switchBody"onclick="toggleDarkMode()"tabindex=0>
-    <div class="switchSelector switchOn"></div>
+    <div class="switchSelector switchOff"id="darkModeSwitch"></div>
    </div>
   </div>
- <div onclick="goTo('gameReturn')"class="button">Down</div>
+ <div class="rowCentered">
+  <div onclick="goTo('gameReturn')"class="button">NEW GAME</div>
+  <div onclick="goto('gameReturn')"class="button">LOAD SAVE</div>
+ </div>
 </div>
 <div id="gameReturn"class="screen">
  <p>VERY RANDOM TEXT</p>

@@ -1,9 +1,14 @@
 .switchBody{
- width:3vw;
- height:6vh;
- background-color:gray;
- border:2% solid gray;
+ margin-left:3rem;
+ width:2.6rem;
+ height:1.2rem;
+ background-color:lightgray;
+ border:0.2rem solid lightgray;
  border-radius:5rem;
+}
+.switchBody:hover{
+ background-color:gray;
+ border:0.2rem solid gray;
 }
 .switchOn{
  margin-left:50%;
@@ -19,9 +24,16 @@
  border-radius:5rem;
 }
 .button{
- border:0.5 solid gray;
- border-radius:1rem;
- background-color:gray;
+ border:0.5% solid gray;
+ border-radius:0.5rem;
+ background-color:lightgray;
  display:inline-block;
  padding:1rem;
+}
+.button:hover{
+ background-color:gray;
+}
+.title{
+ text-align:center;
+ font-size:10vh;
 }
